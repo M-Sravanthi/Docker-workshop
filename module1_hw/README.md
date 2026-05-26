@@ -1,4 +1,5 @@
-Module 1 - Homework - https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/cohorts/2026/01-docker-terraform/homework.md
+Module 1 - Homework - Docker and terraform fundamentals
+https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/cohorts/2026/01-docker-terraform/homework.md
 
 Question 1: Run Docker with Python 3.13 image using bash entrypoint.
 (pipeline) > docker run -it -- entrypoint=bash python:3.13-slim
