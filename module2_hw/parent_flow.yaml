@@ -1,0 +1,37 @@
+id: parent_flow
+namespace: zoomcamp
+
+inputs:
+  - id: taxi_types
+    type: ARRAY
+    itemType: STRING
+    defaults: ["yellow", "green"]
+
+  - id: year
+    type: STRING
+    defaults: "2021"
+
+  - id: months
+    type: ARRAY
+    itemType: STRING
+    defaults: ["01", "02", "03", "04", "05", "06", "07"]
+
+tasks:
+  - id: loop_taxi_types
+    type: io.kestra.plugin.core.flow.ForEach
+    values: "{{ inputs.taxi_types }}"
+    tasks:
+      - id: loop_months
+        type: io.kestra.plugin.core.flow.ForEach
+        values: "{{ inputs.months }}"
+        tasks:
+          - id: trigger_taxi_subflow
+            type: io.kestra.plugin.core.flow.Subflow
+            namespace: zoomcamp
+            flowId: child_subflow
+            wait: true
+            transmitFailed: true
+            inputs:
+              taxi: "{{ parent.taskrun.value }}"
+              year: "{{ inputs.year }}"
+              month: "{{ taskrun.value }}"
