@@ -1,4 +1,4 @@
-
+Module 3 Datawarehouse homework - https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/cohorts/2026/03-data-warehouse/homework.md
 
 Create an external table: 
 CREATE OR REPLACE EXTERNAL TABLE `project.dataset.yellow_taxi_external_2024`
