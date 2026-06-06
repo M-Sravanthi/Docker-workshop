@@ -1,6 +1,6 @@
 TERRADEMO/keys/
 *.json 
-
+*mine.sql
 **.env*
 **.env_encoded
 .venv/
